@@ -1,11 +1,13 @@
-# TechieOS™ Official Website
+# TechieOS Official Website
 
-Official public website for TechieOS.
+GitHub Pages website for TechieOS.
 
-- Website: https://techieos.com
-- GitHub: https://github.com/TechieOS
-- Location: Bengaluru, Karnataka, India
-- MSME registered
-- Trademark application pending
+- `index.html` — website content
+- `styles.css` — responsive design
+- `script.js` — mobile navigation and footer year
+- `logo.png` — keep the existing TechieOS logo in the repository
+- `CNAME` — custom domain configuration
 
-This repository is intended for deployment through GitHub Pages.
+GitHub Pages: `main` branch, `/` root, custom domain `techieos.com`.
+
+No build system is required.
