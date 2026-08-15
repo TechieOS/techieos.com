@@ -1,0 +1,41 @@
+name: Notify IndexNow
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "*.html"
+      - "*.xml"
+      - "robots.txt"
+      - "styles.css"
+      - "script.js"
+
+permissions:
+  contents: read
+
+jobs:
+  indexnow:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Notify IndexNow
+        env:
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+        run: |
+          curl -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d "{
+              \"host\": \"techieos.com\",
+              \"key\": \"${INDEXNOW_KEY}\",
+              \"keyLocation\": \"https://techieos.com/${INDEXNOW_KEY}.txt\",
+              \"urlList\": [
+                \"https://techieos.com/\",
+                \"https://techieos.com/software-development.html\",
+                \"https://techieos.com/internships.html\",
+                \"https://techieos.com/projects.html\",
+                \"https://techieos.com/insights.html\",
+                \"https://techieos.com/about.html\",
+                \"https://techieos.com/contact.html\"
+              ]
+            }"
