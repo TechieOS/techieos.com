@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://techieos.com/sitemap.xml
